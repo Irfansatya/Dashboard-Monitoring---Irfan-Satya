@@ -1,0 +1,129 @@
+.daftarkelas {
+    display: flex;
+}
+
+.konten {
+    margin-left: 270px;
+    margin-top: 40px;
+    padding: 10px;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.card {
+    border: 1px solid #7F9BE1;
+    border-radius: 8px;
+    padding: 20px 14px 14px 20px;
+    width: 250px;
+    box-shadow: 0 2px 8px rgba(252, 49, 49, 0.1);
+}
+
+.datacard-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.card h2 {
+    margin: 0;
+    font-size: 20px;
+    margin-top: -20px;
+    margin-bottom: 10px;
+}
+
+.card-info {
+    font-size: 14px;
+    color: #666;
+    margin: 4px 0;
+}
+
+.datatext-content {
+    margin-top: 20px;
+}
+
+.data-iconnumber {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 4px;
+}
+
+.icon {
+    width: 24px;
+    /* Ukuran ikon */
+    height: 24px;
+    /* Ukuran ikon */
+}
+
+.number {
+    font-size: 16px;
+    /* Ukuran teks untuk angka */
+    font-weight: bold;
+    /* Menebalkan angka */
+}
+
+.cardButton {
+    width: 255px;
+    margin-top: 40px;
+    padding: 8px 12px;
+    background-color: transparent;
+    border: 1px solid #007bff;
+    color: #007bff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cardButton:hover {
+    background-color: #cfe6ff;
+}
+
+.header {
+    display: flex;
+    /* Mengubah menjadi flex container */
+    justify-content: space-between;
+    /* Menyusun judul dan dropdown di kedua sisi */
+    align-items: center;
+    /* Vertikal center */
+}
+
+.judull {
+    font-size: 24px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.datakelas-select {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #DFE1EE;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.kelas-select:focus {
+    outline: none;
+    border-color: #0056b3;
+}
+
+.card-contentSiswa {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.text-contentSiswa {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.icon-numberSiswa {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: -58px;
+    margin-left: 205px;
+}

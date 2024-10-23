@@ -1,0 +1,622 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup {
+    width: 445px;
+    height: 516px;
+    border-radius: 13px;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 41px;
+    height: 41px;
+    margin-left: 182px;
+    margin-top: 3px;
+}
+
+.closeIcon {
+    cursor: pointer;
+    width: 22px;
+    height: 22px;
+    margin-top: -25px;
+    margin-right: -3px;
+}
+
+.judul {
+    text-align: center;
+    font-size: 23px;
+    font-weight: 600;
+    margin-top: 14px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 21px;
+}
+
+.inputGroup {
+    margin-bottom: 12px;
+}
+
+.inputgroupProvinsi {
+    margin-bottom: 12px;
+    margin-top: -3px;
+}
+
+.labelNama {
+    display: flex;
+}
+
+.inputNama {
+    display: flex;
+}
+
+.labelFirstname {
+    font-size: 14px;
+    font-weight: 650;
+    color: #252525;
+    margin-left: 15px;
+}
+
+.labelProvinsi {
+    font-size: 14px;
+    font-weight: 650;
+    color: #252525;
+    margin-left: 15px;
+    margin-top: -5px;
+}
+
+.inputFirstname {
+    width: 181.5px;
+    height: 40px;
+    padding: 15px;
+    border: 1px solid #E1E3E8;
+    background-color: #F2F4FA;
+    border-radius: 6px;
+    margin-left: 15px;
+    margin-top: 7px;
+    font-size: 13.5px;
+    font-weight: 350;
+    color: #252525;
+}
+
+.labelLastname {
+    font-size: 14px;
+    font-weight: 650;
+    color: #252525;
+    margin-left: 110px;
+}
+
+.labelKecamatan {
+    font-size: 14px;
+    font-weight: 650;
+    color: #252525;
+    margin-left: 84px;
+}
+
+.inputLastname {
+    width: 181.5px;
+    height: 40px;
+    padding: 15px;
+    border: 1px solid #E1E3E8;
+    background-color: #F2F4FA;
+    border-radius: 6px;
+    margin-left: 13px;
+    margin-top: 7px;
+    font-size: 13.5px;
+    font-weight: 350;
+    color: #252525;
+}
+
+.labelEmail {
+    font-size: 14px;
+    font-weight: 650;
+    color: #252525;
+    margin-left: 15px;
+}
+
+.inputEmail {
+    width: 375px;
+    height: 40px;
+    padding: 15px;
+    border: 1px solid #E1E3E8;
+    background-color: #F2F4FA;
+    border-radius: 6px;
+    margin-left: 15px;
+    margin-top: 7px;
+    font-size: 13.5px;
+    font-weight: 350;
+    color: #252525;
+}
+
+.inputQuestion {
+    width: 375px;
+    height: 40px;
+    padding: 15px;
+    border: 1px solid #E1E3E8;
+    background-color: #F2F4FA;
+    border-radius: 6px;
+    margin-left: 15px;
+    margin-top: 4px;
+    font-size: 13.5px;
+    font-weight: 350;
+    color: #252525;
+}
+
+.labelPassword {
+    font-size: 14px;
+    font-weight: 650;
+    color: #252525;
+    margin-left: 15px;
+}
+
+.inputPassword {
+    width: 375px;
+    height: 40px;
+    padding: 15px;
+    border: 1px solid #E1E3E8;
+    background-color: #F2F4FA;
+    border-radius: 6px;
+    margin-left: 15px;
+    margin-top: 7px;
+    font-size: 13.5px;
+    font-weight: 350;
+    color: #252525;
+}
+
+.passwordGroup {
+    position: relative;
+    width: calc(100% - 30px);
+    padding-right: 30px
+}
+
+.passwordToggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 17px;
+    height: 17px;
+    margin-top: 4px;
+    margin-right: -10px;
+}
+
+.registerButton {
+    background-color: #050505;
+    color: white;
+    width: 375px;
+    height: 40px;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 420;
+    margin-bottom: 10px;
+    text-align: center;
+    margin-left: 15px;
+    margin-top: 17px;
+}
+
+.sudahpunyaAkun {
+    text-align: center;
+    color: #252525;
+    font-size: 12.5px;
+    font-weight: 500;
+    margin-top: 40px;
+  }
+  
+  .masukKlik {
+    color: #3F53FF;
+    font-size: 12.5px;
+    font-weight: 650;
+    margin-left: 2px;
+    cursor: pointer;
+  }
+
+  .contentContainer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.content {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.content1 {
+    min-width: 100%;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.content2 {
+    min-width: 100%;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.content3 {
+    min-width: 100%;
+    transition: opacity 0.3s ease-in-out;
+    margin-top: 21px;
+}
+
+.content4 {
+    min-width: 100%;
+    transition: opacity 0.3s ease-in-out;
+    margin-top: 21px;
+}
+
+.content5 {
+    min-width: 100%;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.content6 {
+    min-width: 100%;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.progressBarContainer {
+    width: 100%;
+    height: 4px;
+    background-color: #CFD4FF;
+    position: absolute;
+    border-radius: 13px;
+    margin-top: -19.5px;
+    margin-left: -19px;
+}
+
+.progressBar {
+    height: 100%;
+    background-color: #3F53FF;
+    width: 0; /* default width */
+    transition: width 0.3s;
+    border-radius: 13px;
+}
+
+.genderContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.genderButton1 {
+    padding: 5px;
+    width: 189px;
+    height: 40px;
+    border: 1px solid #E6E8ED;
+    border-radius: 6px;
+    background-color: #F2F4FA;
+    cursor: pointer;
+    margin-left: 15px;
+    font-size: 13.5px;
+    font-weight: 350;
+    color: #8E8E8E;
+    text-align: center;
+    align-items: center;
+    margin-top: 6px;
+}
+
+.genderButton2 {
+    padding: 5px;
+    width: 189px;
+    height: 40px;
+    border: 1px solid #E6E8ED;
+    border-radius: 5px;
+    background-color: #F2F4FA;
+    cursor: pointer;
+    color: #8E8E8E;
+    font-size: 13.5px;
+    font-weight: 350;
+    text-align: center;
+    align-items: center;
+    margin-top: 6px;
+    margin-right: 16px;
+}
+
+.selected {
+    background-color: #CAD9FF;
+    color: #3F53FF;
+    font-size: 13.5px;
+    font-weight: 500;
+    
+}
+
+.labelGender {
+    font-size: 14px;
+    font-weight: 650;
+    color: #252525;
+    margin-left: 15px;
+}
+
+.labelBloodType {
+    font-size: 14px;
+    font-weight: 650;
+    color: #252525;
+    margin-left: 15px;
+}
+
+.labelAge {
+    font-size: 14px;
+    font-weight: 650;
+    color: #252525;
+    margin-left: 172px;
+}
+
+.labelIncome {
+    font-size: 14px;
+    font-weight: 650;
+    color: #252525;
+    margin-left: 15px;
+}
+
+.inputBlood {
+    width: 228px;
+    height: 40px;
+    color: #252525;
+    background-color: #F2F4FA;
+    border-radius: 6px;
+    border: 1px solid #E6E8ED;
+    margin-left: 15px;
+    font-size: 13.5px;
+    font-weight: 400;
+    padding: 10px;
+    margin-top: 6px;
+}
+
+.inputProvinsi {
+    width: 375px;
+    height: 40px;
+    color: #252525;
+    background-color: #F2F4FA;
+    border-radius: 6px;
+    border: 1px solid #E6E8ED;
+    margin-left: 15px;
+    font-size: 13.5px;
+    font-weight: 400;
+    padding: 10px;
+    margin-top: 7px;
+}
+
+.inputKabupaten {
+    width: 181.5px;
+    height: 40px;
+    color: #252525;
+    background-color: #F2F4FA;
+    border-radius: 6px;
+    border: 1px solid #E6E8ED;
+    margin-left: 15px;
+    font-size: 13.5px;
+    font-weight: 400;
+    padding: 10px;
+    margin-top: 7px;
+}
+
+.inputKecamatan {
+    width: 181.5px;
+    height: 40px;
+    color: #252525;
+    background-color: #F2F4FA;
+    border-radius: 6px;
+    border: 1px solid #E6E8ED;
+    margin-left: 13px;
+    font-size: 13.5px;
+    font-weight: 400;
+    padding: 10px;
+    margin-top: 7px;
+}
+
+.inputAge {
+    width: 132px;
+    height: 40px;
+    color: #252525;
+    background-color: #F2F4FA;
+    border-radius: 6px;
+    border: 1px solid #E6E8ED;
+    margin-left: 13px;
+    font-size: 13.5px;
+    font-weight: 350;
+    padding: 10px;
+    margin-top: 6px;
+}
+
+.selectInput {
+    width: 375px;
+    height: 40px;
+    color: #252525;
+    background-color: #F2F4FA;
+    border-radius: 6px;
+    border: 1px solid #E6E8ED;
+    margin-left: 15px;
+    font-size: 13.5px;
+    font-weight: 400;
+    padding: 10px;
+    margin-top: 6px;
+}
+
+.labelStatus {
+    font-size: 14px;
+    font-weight: 650;
+    color: #252525;
+    margin-left: 35px;
+}
+
+.image1 {
+    width: 335px;
+    height: auto;
+    cursor: pointer;
+    margin-bottom: 8px;
+    margin-top: 7px;
+    margin-left: 35px;
+}
+
+.image2 {
+    width: 335px;
+    height: auto;
+    cursor: pointer;
+    margin-left: 35px;
+}
+
+.berhasil {
+    margin-top: 45px;
+    margin-left: 70px;
+}
+
+.ukurangambarBerhasil {
+    width: 255px;
+    height: auto;
+}
+
+.sudahpunyaAkun {
+    text-align: center;
+    color: #252525;
+    font-size: 12.5px;
+    font-weight: 500;
+    margin-top: 37px;
+  }
+  
+  .masukKlik {
+    color: #3F53FF;
+    font-size: 12.5px;
+    font-weight: 650;
+    margin-left: 2px;
+    cursor: pointer;
+  }
+
+  .emailContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.errorText {
+    color: #FF0000;
+    margin-left: 6px;
+    font-size: 11px;
+    font-weight: 450;
+}
+
+.errorBorder {
+    border: 1px solid #FF0000;
+}
+
+.emailIcon {
+    position: absolute;
+    top: 17px;
+    right: 28px;
+    width: 16px;
+    height: 20px;
+}
+
+.otpInputContainer {
+    position: relative;
+    align-items: center;
+    margin-left: 48px;
+    margin-top: 35px;
+  }
+  
+  .otpInput {
+    width: 50px;
+    height: 50px;
+    font-size: 17px;
+    font-weight: 400;
+    text-align: center;
+    color: #252525;
+    border: 1px solid #E1E3E8;
+    background-color: #F2F4FA;
+    border-radius: 5px; /* Membuat sudut rounded */
+    margin-right: 15px;
+    transition: border-color 0.3s ease;
+  }
+
+  .infoVerifikasi {
+    font-size: 13.5px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: -8px;
+  }
+  
+  .otpInput:focus {
+    border-color: #252525; /* Ubah warna border saat fokus */
+  }
+  
+  .otpInput:last-child {
+    margin-right: 0; /* Hilangkan margin-right pada input terakhir */
+  }
+
+.infoEmail {
+    display: flex;
+}
+
+.infoPassword {
+    display: flex;
+}
+
+.errorText {
+    color: red;
+    font-size: 11px;
+    font-weight: 450;
+    margin-top: 2px;
+}
+
+.popupNotification {
+    position: fixed;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0px 24px;
+    background-color: #3b3b3b;
+    color: white;
+    font-size: 13.5px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 45px;
+    border-radius: 8px;
+    opacity: 0;
+    animation: fadeInOut 3s ease-in-out;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

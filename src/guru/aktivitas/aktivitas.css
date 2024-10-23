@@ -1,0 +1,139 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.aktivitas-guru {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #ffffff;
+    margin-left: -23px;
+    margin-top: -37px;
+}
+
+.chart-aktivitas {
+    margin-left: 260px;
+    margin-top: 50px;
+}
+.chart-aktivitas h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-left: 20px;
+}
+.aktivitas-konten {
+    margin-left: 260px;
+    padding: 20px;
+    width: calc(100% - 260px);
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+.aktivitas-konten h3 {
+    font-size: 22px;
+    color: #333;
+    font-weight: 600;
+}
+
+.aktivitas-konten h4 {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.chart-container {
+    margin-top: 20px;
+    font-family: "Inter", sans-serif;
+}
+
+.aktivitas-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #e5e5e5;
+    background-color: #fbfcfd;
+    transition: background-color 0.3s ease, transform 0.2s;
+    font-size: 16px;
+}
+
+.aktivitas-item:hover {
+    background-color: #feffff;
+    /* Warna saat hover */
+    transform: translateY(-2px);
+    /* Efek mengangkat saat hover */
+}
+
+.aktivitas-item h3 {
+    margin: 0;
+    font-size: 16px;
+    /* Ukuran font lebih besar */
+    color: #555;
+    font-weight: 600;
+}
+
+.aktivitas-item p {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* Tombol hapus aktivitas */
+.aktivitas-item button {
+    background-color: #ff0000;
+    border: none;
+    padding: 8px 15px;
+    color: white;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s;
+    /* Tambahkan efek transformasi */
+}
+
+.aktivitas-item button:hover {
+    background-color: #DD0000;
+    transform: scale(1.05);
+    /* Efek memperbesar saat hover */
+}
+
+/* Chart styling */
+.chart-container {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart-container h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Responsif untuk tampilan kecil */
+@media (max-width: 768px) {
+    .aktivitas-guru h2 {
+        font-size: 1.5rem;
+    }
+
+    .aktivitas-item h3 {
+        font-size: 1rem;
+    }
+
+    .aktivitas-item p {
+        font-size: 0.8rem;
+    }
+
+    .aktivitas-item button {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+}

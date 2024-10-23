@@ -1,0 +1,141 @@
+/* Layout Utama */
+.absen-list {
+    display: flex;
+    height: 100vh;
+    font-family: 'Inter', sans-serif;
+}
+
+.absen-konten {
+    margin-left: 238px;
+    margin-top: -7px;
+    padding: 20px;
+    width: 1015px;
+}
+
+/* Kontainer Utama */
+.absensi-container {
+    padding: 1rem;
+    font-family: Arial, sans-serif;
+}
+
+.absensi-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.absensi-subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.absensi-section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.absensi-controls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.search-containerr {
+    position: relative;
+}
+
+.search-containerr i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.search-input {
+    width: 250px;
+    padding: 10px 10px 10px 35px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.absensi-date-picker {
+    padding: 8px 10px;
+    margin-left: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+}
+
+.absensi-button {
+    display: flex;
+    gap: 2rem;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+.absensi-cancel-button,
+.absensi-save-button {
+    font-family: 'Inter' sans-serif;
+    padding: 10px 30px;
+    /* Ukuran padding yang lebih besar */
+    border-radius: 6px;
+    /* Bulatkan sudut lebih besar */
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-bottom: 40px;
+    margin-top: 10px;
+}
+
+.absensi-cancel-button {
+    background-color: #ffffff;
+    color: #050505;
+    margin-right: 1rem;
+    font-family: 'Inter' sans-serif;
+    border: 1px solid #6c6b6b;
+}
+
+/* Tombol Simpan */
+.absensi-save-button {
+    background-color: #050505;
+    color: white;
+}
+
+.ag-theme-alpine {
+    --ag-header-height: 40px;
+    --ag-header-foreground-color: #333;
+    --ag-header-background-color: #ffff;
+    --ag-odd-row-background-color: #ffff;
+    font-family: 'Inter', sans-serif;
+
+}
+
+.ag-header-cell-text {
+    font-weight: bold;
+}
+
+.ag-checkbox-input-wrapper {
+    justify-content: center;
+}
+
+.ag-cell-value {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.absensi-wrapper {
+    padding: 4px 24px 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.1);
+}

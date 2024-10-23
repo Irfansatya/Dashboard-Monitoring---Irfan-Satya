@@ -1,0 +1,126 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.title-content {
+    font-size: 24px;
+    font-weight: 650;
+    color: #050505;
+    margin-left: -12px;
+  }
+  
+  .contentTranskrip {
+    margin-left: 250px;
+    /* Sesuaikan dengan lebar sidebar */
+    padding: 20px;
+    /* Tambahkan padding untuk memberikan ruang di dalam konten */
+    margin-top: -3px;
+  }
+  
+  .group-box {
+    border: 1px solid #E6E6E6;
+    background-color: #F4F4FB;
+    border-radius: 15px;
+    margin-left: -10px;
+    margin-top: -20px;
+    height: 500px;
+    width: 975px;
+  }
+  
+  .jurusan-select-container {
+    margin-top: 20px;
+    margin-left: 30px;
+  }
+
+  .jurusan-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #252525;
+  }
+
+  .kelas-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #252525;
+  }
+  
+  .jurusan-select {
+    border: 1px solid #E6E6E6;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: white;
+    cursor: pointer;
+    width: 300px;
+    height: 40px;
+    margin-left: 30px;
+    font-size: 14px;
+    color: #050505;
+    font-weight: 400;
+    padding-left: 8px;
+    outline: none;
+  }
+  
+  .titikdua1 {
+    margin-left: 20px;
+  }
+  
+  .kelas-select-container {
+    margin-left: 545px;
+    margin-top: -40px;
+  }
+  
+  .kelas-select {
+    border: 1px solid #E6E6E6;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: white;
+    cursor: pointer;
+    width: 300px;
+    height: 40px;
+    margin-left: 30px;
+    font-size: 14px;
+    color: #050505;
+    font-weight: 400;
+    padding-left: 8px;
+    outline: none;
+  }
+  
+  .kelas-select:focus {
+    outline: none;
+    /* Remove default outline */
+    border-color: black;
+    /* Change border color on focus */
+  }
+  
+  .titikdua2 {
+    margin-left: 20px;
+  }
+  
+  .cari {
+    width: 110px;
+    height: 38px;
+    border-radius: 8px;
+    background-color: #050505;
+    font-size: 15px;
+    font-weight: 400;
+    color: white;
+  }
+  
+  .reset {
+    width: 110px;
+    height: 38px;
+    border-radius: 8px;
+    background-color: #050505;
+    font-size: 15px;
+    font-weight: 400;
+    color: white;
+  }
+  
+  .button-flex {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: right;
+    margin-right: 35px;
+    margin-top: 35px;
+  }

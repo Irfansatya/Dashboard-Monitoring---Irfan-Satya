@@ -1,0 +1,1490 @@
+body {
+  font-family: 'Inter', sans-serif;
+  }
+
+  /* ---------------LIGHT MODE--------------- */
+
+  .container {
+    height: 100vh;
+    display: flex;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: white;
+  }
+
+  /* Scrollbar untuk mode terang */
+  .container::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  .container::-webkit-scrollbar-thumb {
+    background-color: #ccc; /* Warna untuk thumb scrollbar */
+  }
+
+  .container::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Warna untuk track scrollbar */
+  }
+
+  .sidebar {
+    width: 235px;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position: fixed;
+    border-right: 1px solid #ECECEC;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 53px;
+    margin-top: 2px;
+    margin-left: 6px;
+  }
+  
+  .logoText {
+    color: #050505;
+    font-size: 20px;
+    font-weight: 650;
+    margin-left: 9px;
+    margin-top: 10px;
+  }
+
+  .tandaBiru {
+    background-color: #3F53FF;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 4px;
+    height: 24px;
+    margin-left: 97px;
+  }
+  
+  .menuItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    margin-left: 7px;
+    cursor: pointer;
+    width: 208px;
+  }
+  
+  .menuItem img {
+    width: 21.5px;
+    height: 21.5px;
+  }
+
+  .menu2 {
+    margin-top: 50px;
+  }
+
+  .textDashboard {
+    color: #3F53FF;
+    font-size: 14.5px;
+    font-weight: 500;
+    margin-left: 10px;
+  }
+  
+  .textSidebar {
+    color: #828282;
+    font-size: 14.5px;
+    font-weight: 500;
+    margin-left: 10px;
+  }
+
+  .arrow1 {
+    width: 15px;
+    height: 15px;
+    margin-left: 69px;
+  }
+
+  .arrow2 {
+    width: 15px;
+    height: 15px;
+    margin-left: 50px;
+  }
+  
+  .indicator {
+    margin-left: 63px;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .logoutText {
+    color: #FF3F3F;
+    font-size: 14.5px;
+    font-weight: 600;
+    margin-left: 10px;
+  }
+
+  .content {
+    padding: 20px;
+    background-color: white;
+    margin-left: 262px;
+  }
+
+  .content1 {
+    margin-top: 6px;
+  }
+
+  .atas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -5px;
+  }
+  
+  .judul {
+    font-size: 25px;
+    font-weight: 650;
+    color: black;
+  }
+  
+  .search {
+    margin-left: 420px;
+    width: 21px;
+    height: 21px;
+    margin-top: -5px;
+  }
+
+  .bell {
+    width: 21px;
+    height: 21px;
+    margin-top: -5px;
+    margin-right: 5px;
+  }
+
+  .avatar {
+    width: 30px;
+    height: 30px;
+    margin-top: -5px;
+    margin-right: -15px;
+  }
+  
+  .userName {
+    margin-right: -18px;
+    font-weight: 450;
+    font-size: 15px;
+    margin-top: -5px;
+    color: black;
+  }
+  
+  .arrowUser {
+    margin-right: 15px;
+    width: 21px;
+    height: 21px;
+    margin-top: -5px;
+    cursor: pointer;
+  }
+  
+  .bawah {
+    margin-top: 4px;
+    color: #7C8DB5;
+    font-size: 14.5px;
+    font-weight: 380;
+  }
+
+  .content2 {
+    margin-top: 28px;
+    justify-content: space-between;
+    padding: 20px;
+    display: flex;
+    background-color: white;
+    border: 1px solid #D5E1FF;
+    border-radius: 10px;
+    height: 130px;
+    align-items: center;
+    width: 940px;
+    margin-left: 0px;
+  }
+
+  .boxLakilaki {
+    width: 227px;
+    height: 130px;
+    padding: 18px;
+    margin-left: -20px;
+  }
+
+  .boxPerempuan {
+    width: 227px;
+    height: 130px;
+    margin-left: 19px;
+    padding: 18px;
+  }
+
+  .boxPelajar {
+    width: 227px;
+    height: 130px;
+    margin-left: 19px;
+    padding: 18px;
+  }
+
+  .boxPekerja {
+    width: 227px;
+    height: 130px;
+    margin-left: 19px;
+    padding: 18px;
+  }
+
+  .pembatas {
+    width: 1px;
+    height: 85px;
+    border-left: 1px solid #D5E1FF;
+    margin-left: 11px;
+  }
+
+  .jumlah1, .jumlah2, .jumlah3, .jumlah4 {
+    font-size: 26px;
+    font-weight: 700;
+    color: black;
+  }
+
+  .male, .female, .pelajar, .pekerja {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    background-color: white;
+    box-shadow: 0 2px 6px rgba(67, 95, 137, 0.1);
+    border: 1px solid #f1f1f1;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 140px;
+    margin-top: -40px;
+  }
+
+  .iconMale, .iconFemale, .iconPelajar, .iconPekerja {
+    width: 20px;
+    height: 20px;
+  }
+
+  .total1, .total2, .total3, .total4 {
+    font-size: 15px;
+    font-weight: 450;
+    margin-top: 5px;
+    color: black;
+  }
+
+  .language {
+    width: 18px;
+    height: 18px;
+    margin-top: 10px;
+  }
+
+  .terjemahan1, .terjemahan2, .terjemahan3, .terjemahan4 {
+    font-size: 12.8px;
+    font-weight: 400;
+    margin-left: 25px;
+    margin-top: -18px;
+    color: #7C8DB5;
+    display: flex;
+  }
+
+  .content3 {
+    margin-top: 6px;
+    justify-content: space-between;
+    padding: 22px;
+    display: flex;
+    margin-left: -20px;
+  }
+
+  .chartKiri {
+    width: 680px;
+    height: 310px;
+    background-color: white;
+    border: 1px solid #D5E1FF;
+    border-radius: 10px;
+  }
+
+  .chartKanan {
+    width: 230px;
+    height: 310px;
+    background-color: white;
+    border: 1px solid #D5E1FF;
+    border-radius: 10px;
+  }
+
+  .content4 {
+    margin-top: -14px;
+    justify-content: space-between;
+    padding: 20px;
+    display: flex;
+    margin-left: -20px;
+  }
+
+  .tableUser {
+    width: 940px;
+    height: 450px;
+    background-color: white;
+    border: 1px solid #D5E1FF;
+    border-radius: 10px;
+    margin-bottom: 13px;
+    position: relative; /* Ensure position context for absolute positioning */
+    overflow: hidden; /* Prevent content from overflowing */
+  }
+  
+  .editButtonContainer {
+    position: sticky; /* Make sure it sticks while scrolling */
+    bottom: 10px; /* Adjust this based on your layout */
+    right: 10px; /* Adjust this based on your layout */
+    background-color: white; /* Ensure background color matches the grid */
+    z-index: 10; /* Ensure it's on top of other content */
+  }
+  
+  /* Ensure buttons are well-spaced and visible */
+  .editButton,
+  .deleteButton {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .editButton {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .editButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .deleteButton {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  .deleteButton:hover {
+    background-color: #c82333;
+  }
+
+/* Form styling */
+.editForm {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.editForm label {
+  display: block;
+  margin-bottom: 10px;
+  color: #495057;
+}
+
+.editForm input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+
+.editForm button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-right: 10px; /* Adding space between buttons */
+}
+
+.editForm button:hover {
+  background-color: #0056b3;
+}
+
+/* Close button styling */
+.closeButton {
+  padding: 10px 10px;
+  background-color: #6c757d;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.closeButton:hover {
+  background-color: #5a6268;
+}
+
+/* Confirmation button styling */
+.confirmButton {
+  padding: 10px 20px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+}
+
+.confirmButton:hover {
+  background-color: #c82333;
+}
+
+/* Popup delete confirmation specific styling */
+.deletePopup .popupContent {
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+.deletePopup .confirmButton {
+  background-color: #dc3545;
+}
+
+.deletePopup .confirmButton:hover {
+  background-color: #c82333;
+}
+
+.deletePopup .closeButton {
+  background-color: #6c757d;
+}
+
+.deletePopup .closeButton:hover {
+  background-color: #5a6268;
+}
+
+/* Positioning the buttons in the delete popup */
+.deletePopup .popupContent .buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.custom-header {
+  background-color: #ffffff !important; /* Mengatur background header menjadi putih */
+  color: #000000 !important; /* Mengatur teks header menjadi hitam */
+}
+
+.data {
+  display: flex;
+}
+
+.dataPengguna {
+  font-size: 19px;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-left: 20px;
+  color: #252525;
+}
+
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* popup tambah data */
+.popup {
+  background-color: white;
+  border-radius: 13px;
+  width: 490px;
+  height: 470px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 7px 7px rgba(0, 0, 0, 0.2);
+}
+
+.popupHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #DEDEDE;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  margin-top: -7px;
+  margin-left: 2px;
+  width: 445px;
+  height: 45px;
+}
+
+.iconHeader {
+  width: 18px;
+  height: 18px;
+}
+
+.titleHeader {
+  flex-grow: 1;
+  font-size: 16px;
+  font-weight: 550;
+  color: #252525;
+  margin-left: 8px;
+}
+
+.iconClose {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+.popupContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  margin-left: 4px;
+  margin-top: -2px;
+}
+
+.inputGroup label {
+  font-size: 13.3px;
+  font-weight: 530;
+  margin-bottom: 7px;
+  color: #000000;
+}
+
+.inputGroup input,
+.inputGroup select {
+  padding: 9px;
+  border: 1px solid #E6E8ED;
+  border-radius: 5px;
+  background-color: #F2F4FA;
+  margin-bottom: 2px;
+}
+
+.textInput {
+  font-size: 13.5px;
+  font-weight: 350;
+  color: #000000;
+  width: 209px;
+}
+
+.textAlamat {
+  font-size: 13.5px;
+  font-weight: 350;
+  color: #000000;
+  width: 350px;
+}
+
+.popupActions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.cancelButton {
+  background-color: white;
+  color: #000000;
+  border: 1.3px solid #D0D0D0;
+  height: 36px;
+  width: 105px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14.5px;
+  font-weight: 540;
+  text-align: center;
+  margin-left: 5px;
+  margin-top: 3px;
+}
+
+.saveButton {
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 3px;
+  font-size: 14.5px;
+  font-weight: 540;
+  height: 36px;
+  width: 105px;
+  text-align: center;
+  margin-right: 6px;
+}
+
+.headerChart1 {
+  display: flex;
+  margin-top: 15px;
+}
+
+.headerChart2 {
+  display: flex;
+  margin-top: 15px;
+}
+
+.chartPendapatan {
+  margin-top: 10px;
+  margin-left: 11px;
+  font-size: 15px;
+}
+
+.textPendapatan {
+  font-size: 18px;
+  font-weight: 570;
+  margin-left: 18px;
+  color: black;
+}
+
+.lingkaran {
+  background-color: #347AE2;
+  width: 7px;
+  height: 7px;
+  border-radius: 50px;
+  margin-left: 246px;
+  margin-top: 11px;
+}
+
+.ratarata {
+  font-size: 11.5px;
+  font-weight: 450;
+  margin-left: 7px;
+  margin-top: 6px;
+  color: black;
+}
+
+.opsi {
+  display: flex;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(67, 95, 137, 0.1);
+  border: 1px solid #f1f1f1;
+  align-items: center;
+  margin-left: 20px;
+  border-radius: 7px;
+  width: 75px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.arrowSemua {
+  height: 16px;
+  width: 16px;
+  margin-left: 1px;
+}
+
+.semua {
+  font-size: 11.5px;
+  font-weight: 450;
+  margin-left: 10px;
+  color: black;
+}
+
+.textGoldarah {
+  font-size: 18px;
+  font-weight: 570;
+  margin-left: 18px;
+  color: black;
+}
+
+.more {
+  margin-left: 55px;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+}
+
+.totalOpsi {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #E6FAE9;
+  margin-top: 3.5px;
+  margin-left: 9px;
+  align-items: center;
+}
+
+.empat {
+  font-size: 13.5px;
+  font-weight: 550;
+  color: #00B318;
+  margin-left: 5.5px;
+}
+
+.chartGoldarah {
+  margin-left: -5.5px;
+  margin-top: 11px;
+}
+
+.keterangan {
+  display: flex;
+  margin-top: -13px;
+}
+
+.warnaA {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #67B7DC;
+  margin-left: 32px;
+}
+
+.textA {
+  font-size: 12px;
+  font-weight: 500;
+  color: #252525;
+  margin-left: 6px;
+  margin-top: -5px;
+}
+
+.warnaB {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #6794DC;
+  margin-left: 22px;
+}
+
+.textB {
+  font-size: 12px;
+  font-weight: 500;
+  color: #252525;
+  margin-left: 6px;
+  margin-top: -5px;
+}
+
+.warnaAB {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #6771DC;
+  margin-left: 22px;
+}
+
+.textAB {
+  font-size: 12px;
+  font-weight: 500;
+  color: #252525;
+  margin-left: 6px;
+  margin-top: -5px;
+}
+
+.warnaO {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #8067DC;
+  margin-left: 22px;
+}
+
+.textO {
+  font-size: 12px;
+  font-weight: 500;
+  color: #252525;
+  margin-left: 6px;
+  margin-top: -5px;
+}
+
+.opsi2 {
+  display: flex;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(67, 95, 137, 0.1);
+  border: 1px solid #f1f1f1;
+  align-items: center;
+  margin-left: 20px;
+  border-radius: 7px;
+  width: 85px;
+  height: 35px;
+  cursor: pointer;
+  margin-top: 17px;
+  margin-left: 15px;
+}
+
+.arrowSemua2 {
+  height: 18px;
+  width: 18px;
+  margin-left: 1px;
+}
+
+.semua2 {
+  font-size: 13.5px;
+  font-weight: 450;
+  margin-left: 13px;
+  color: #252525;
+}
+
+.tambah {
+  padding: 7px 20px;
+  background-color: #00B318;
+  border-radius: 5px;
+  margin-top: 17px;
+  margin-left: 535px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+}
+
+.popupDelete {
+  width: 340px;
+  height: 130px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 7px 7px rgba(0, 0, 0, 0.2);
+}
+
+.confirmText {
+  font-size: 13.5px;
+  font-weight: 400;
+  color: black;
+  margin-top: 17px;
+  margin-left: 20px;
+}
+
+.popupTombol {
+  display: flex;
+}
+
+.batalkanButton {
+  background-color: white;
+  color: #000000;
+  border: 1.3px solid #D0D0D0;
+  height: 36px;
+  width: 100px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14.5px;
+  font-weight: 540;
+  text-align: center;
+  margin-left: 128px;
+  margin-top: 40px;
+}
+
+.hapusButton {
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 40px;
+  font-size: 14.5px;
+  font-weight: 540;
+  height: 36px;
+  width: 80px;
+  text-align: center;
+  margin-left: 12px;
+}
+
+.arrowContainer {
+  cursor: pointer;
+  position: relative;
+}
+
+.rotated {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.detailPopup {
+  position: relative;
+  top: 50px; /* Adjust based on your needs */
+  right: 10px; /* Adjust based on your needs */
+  background-color: #F0F1FB;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #DFDFDF;
+  border-radius: 7px;
+  padding: 10px;
+  z-index: 1000;
+  margin-top: 17px;
+  margin-left: -243px;
+  width: 220px;
+  height: 180px;
+  overflow: hidden;
+}
+
+.posisiItem {
+  margin-top: -10px;
+}
+
+.popupItem {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14.5px;
+  font-weight: 400;
+  border-bottom: 1px solid #dfdfdf;
+  width: 220px;
+  height: 45px;
+  margin-left: -10px;
+  color: #050505;
+}
+
+.popupItem:hover {
+  background-color: #EDEEF8;
+  width: 220px;
+  height: 45px;
+}
+
+.popupIcon {
+  margin-left: 15px;
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+}
+
+.toggleswitch {
+  position: relative;
+  display: inline-block;
+  width: 46px; /* Ukuran lebih kecil untuk toggle */
+  height: 23px; /* Sesuaikan dengan desain yang diinginkan */
+  cursor: pointer;
+  margin-left: 35px;
+}
+
+.toggleswitch input[type="checkbox"] {
+  display: none; /* Sembunyikan checkbox default */
+}
+
+.toggleswitchbackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ddd;
+  border-radius: 15px; /* Setengah dari height untuk border-radius yang melingkar */
+  transition: background-color 0.3s ease-in-out;
+}
+
+.toggleswitchhandle {
+  position: absolute;
+  top: 3.6px; /* Beri jarak dari tepi atas */
+  left: 4px; /* Beri jarak dari tepi kiri */
+  width: 16px; /* Sedikit lebih kecil untuk muat dalam background */
+  height: 16px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.toggleswitch input[type="checkbox"]:checked + .toggleswitchbackground {
+  background-color: #05c46b; /* Warna hijau saat diaktifkan */
+}
+
+.toggleswitch input[type="checkbox"]:checked + .toggleswitchbackground .toggleswitchhandle {
+  transform: translateX(22px); /* Pindahkan handle ke kanan */
+}
+
+.content5 {
+  margin-top: -24px;
+  justify-content: space-between;
+  padding: 20px;
+  display: flex;
+  margin-left: -20px;
+}
+
+.petaLokasi {
+    width: 940px;
+    height: 470px;
+    background-color: white;
+    border: 1px solid #D5E1FF;
+    border-radius: 10px;
+    margin-bottom: 13px;
+    position: relative; /* Ensure position context for absolute positioning */
+    overflow: hidden; /* Prevent content from overflowing */
+}
+
+.textPeta {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 15px;
+  margin-left: 20px;
+  color: #252525;
+}
+
+
+/* ---------------DARK MODE--------------- */
+
+.container.darkMode {
+  height: 100vh;
+  display: flex;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #050505;
+}
+
+.darkMode .content {
+  padding: 20px;
+  background-color: #050505;
+  margin-left: 262px;
+}
+
+.darkMode .judul {
+  font-size: 25px;
+  font-weight: 650;
+  color: white;
+}
+
+.darkMode .userName {
+  margin-right: -18px;
+  font-weight: 450;
+  font-size: 15px;
+  margin-top: -5px;
+  color: white;
+}
+
+.darkMode .content2 {
+  margin-top: 28px;
+  justify-content: space-between;
+  padding: 20px;
+  display: flex;
+  background-color: #050505;
+  border: 1px solid #1B1B1B;
+  border-radius: 10px;
+  height: 130px;
+  align-items: center;
+  width: 940px;
+  margin-left: 0px;
+}
+
+.darkMode .pembatas {
+  width: 1px;
+  height: 85px;
+  border-left: 1px solid #1B1B1B;
+  margin-left: 11px;
+}
+
+.darkMode .jumlah1, .darkMode .jumlah2, .darkMode .jumlah3, .darkMode .jumlah4 {
+  font-size: 26px;
+  font-weight: 700;
+  color: white;
+}
+
+.darkMode .male, .darkMode .female, .darkMode .pelajar, .darkMode .pekerja {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  background-color: #050505;
+  box-shadow: 0 2px 6px rgba(120, 140, 173, 0.1);
+  border: 1px solid #131313;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 140px;
+  margin-top: -40px;
+}
+
+.darkMode .total1, .darkMode .total2, .darkMode .total3, .darkMode .total4 {
+  font-size: 15px;
+  font-weight: 450;
+  margin-top: 5px;
+  color: white;
+}
+
+.darkMode .chartKiri {
+  width: 680px;
+  height: 310px;
+  background-color: #050505;
+  border: 1px solid #1b1b1b;
+  border-radius: 10px;
+}
+
+.darkMode .chartKanan {
+  width: 230px;
+  height: 310px;
+  background-color: #050505;
+  border: 1px solid #1b1b1b;
+  border-radius: 10px;
+}
+
+.darkMode .tableUser {
+  width: 940px;
+  height: 450px;
+  background-color: #050505;
+  border: 1px solid #1b1b1b;
+  border-radius: 10px;
+  margin-bottom: 13px;
+  position: relative; /* Ensure position context for absolute positioning */
+  overflow: hidden; /* Prevent content from overflowing */
+}
+
+.darkMode .textPendapatan {
+  font-size: 18px;
+  font-weight: 570;
+  margin-left: 18px;
+  color: white;
+}
+
+.darkMode .ratarata {
+  font-size: 11.5px;
+  font-weight: 450;
+  margin-left: 7px;
+  margin-top: 6px;
+  color: white;
+}
+
+.darkMode .opsi {
+  display: flex;
+  background-color: #050505;
+  box-shadow: 0 2px 6px rgba(67, 95, 137, 0.1);
+  border: 1px solid #131313;
+  align-items: center;
+  margin-left: 20px;
+  border-radius: 7px;
+  width: 75px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.darkMode .semua {
+  font-size: 11.5px;
+  font-weight: 450;
+  margin-left: 10px;
+  color: white;
+}
+
+.darkMode .textGoldarah {
+  font-size: 18px;
+  font-weight: 570;
+  margin-left: 18px;
+  color: white;
+}
+
+.darkMode .totalOpsi {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #041F08;
+  margin-top: 3.5px;
+  margin-left: 9px;
+  align-items: center;
+}
+
+.darkMode .empat {
+  font-size: 13.5px;
+  font-weight: 550;
+  color: #56E068;
+  margin-left: 5.5px;
+}
+
+.darkMode .textA {
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  margin-left: 6px;
+  margin-top: -5px;
+}
+
+.darkMode .textB {
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  margin-left: 6px;
+  margin-top: -5px;
+}
+
+.darkMode .textAB {
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  margin-left: 6px;
+  margin-top: -5px;
+}
+
+.darkMode .textO {
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  margin-left: 6px;
+  margin-top: -5px;
+}
+
+.darkMode .dataPengguna {
+  font-size: 19px;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-left: 20px;
+  color: white;
+}
+
+.darkMode .opsi2 {
+  display: flex;
+  background-color: #050505;
+  box-shadow: 0 2px 6px rgba(67, 95, 137, 0.1);
+  border: 1px solid #131313;
+  align-items: center;
+  margin-left: 20px;
+  border-radius: 7px;
+  width: 85px;
+  height: 35px;
+  cursor: pointer;
+  margin-top: 17px;
+  margin-left: 15px;
+}
+
+.darkMode .semua2 {
+  font-size: 13.5px;
+  font-weight: 450;
+  margin-left: 13px;
+  color: white;
+}
+
+.darkMode .sidebar {
+  width: 235px;
+  height: 100%;
+  background-color: #050505;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  position: fixed;
+  border-right: 1px solid #1B1B1B;
+}
+
+.darkMode .logoText {
+  color: white;
+  font-size: 20px;
+  font-weight: 650;
+  margin-left: 9px;
+  margin-top: 10px;
+}
+
+.darkMode .textSidebar {
+  color: #7C8DB5;
+  font-size: 14.5px;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+.darkMode .textDashboard {
+  color: #7785FF;
+  font-size: 14.5px;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+.darkMode .tandaBiru {
+  background-color: #7785FF;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  width: 4px;
+  height: 24px;
+  margin-left: 97px;
+}
+
+/* popup tambah data */
+.darkMode .popup {
+  background-color: #1B202A;
+  border-radius: 13px;
+  width: 490px;
+  height: 470px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 7px 7px rgba(0, 0, 0, 0.2);
+}
+
+.darkMode .popupHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #3E3E3E;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  margin-top: -7px;
+  margin-left: 2px;
+  width: 445px;
+  height: 45px;
+}
+
+.darkMode .titleHeader {
+  flex-grow: 1;
+  font-size: 16px;
+  font-weight: 550;
+  color: white;
+  margin-left: 8px;
+}
+
+.darkMode .inputGroup label {
+  font-size: 13.3px;
+  font-weight: 530;
+  margin-bottom: 7px;
+  color: white;
+}
+
+.darkMode .inputGroup input,
+.darkMode .inputGroup select {
+  padding: 9px;
+  border: 1px solid #292F3A;
+  border-radius: 5px;
+  background-color: #2B313D;
+  margin-bottom: 2px;
+}
+
+.darkMode .textInput {
+  font-size: 13.5px;
+  font-weight: 350;
+  color: white;
+  width: 209px;
+}
+
+.darkMode .textAlamat {
+  font-size: 13.5px;
+  font-weight: 350;
+  color: white;
+  width: 350px;
+}
+
+.darkMode .cancelButton {
+  background-color: #1B202A;
+  color: white;
+  border: 1.3px solid #3E3E3E;
+  height: 36px;
+  width: 105px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14.5px;
+  font-weight: 540;
+  text-align: center;
+  margin-left: 5px;
+  margin-top: 3px;
+}
+
+.darkMode .saveButton {
+  background-color: white;
+  color: #1B202A;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 3px;
+  font-size: 14.5px;
+  font-weight: 540;
+  height: 36px;
+  width: 105px;
+  text-align: center;
+  margin-right: 6px;
+}
+
+/* popup hapus data */
+.darkMode .popupDelete {
+  width: 340px;
+  height: 130px;
+  border-radius: 8px;
+  background-color: #1B202A;
+  box-shadow: 0 7px 7px rgba(0, 0, 0, 0.2);
+}
+
+.darkMode .confirmText {
+  font-size: 13.5px;
+  font-weight: 400;
+  color: white;
+  margin-top: 17px;
+  margin-left: 20px;
+}
+
+.darkMode .batalkanButton {
+  background-color: #1B202A;
+  color: white;
+  border: 1.3px solid #3E3E3E;
+  height: 36px;
+  width: 100px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14.5px;
+  font-weight: 540;
+  text-align: center;
+  margin-left: 128px;
+  margin-top: 40px;
+}
+
+.darkMode .hapusButton {
+  background-color: white;
+  color: #1B202A;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 40px;
+  font-size: 14.5px;
+  font-weight: 540;
+  height: 36px;
+  width: 80px;
+  text-align: center;
+  margin-left: 12px;
+}
+
+/* popup toggle user */
+.darkMode .detailPopup {
+  position: relative;
+  top: 50px; /* Adjust based on your needs */
+  right: 10px; /* Adjust based on your needs */
+  background-color: #1B202A;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #31363F;
+  border-radius: 7px;
+  padding: 10px;
+  z-index: 1000;
+  margin-top: 17px;
+  margin-left: -243px;
+  width: 220px;
+  height: 180px;
+  overflow: hidden;
+}
+
+.darkMode .popupItem {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14.5px;
+  font-weight: 400;
+  border-bottom: 1px solid #31363F;
+  width: 220px;
+  height: 45px;
+  margin-left: -10px;
+  color: white;
+}
+
+.darkMode .popupItem:hover {
+  background-color: #171B24;
+  width: 220px;
+  height: 45px;
+}
+
+/* Scrollbar untuk mode gelap */
+.container.darkMode::-webkit-scrollbar {
+  width: 15px;
+}
+
+.container.darkMode::-webkit-scrollbar-thumb {
+  background-color: #555; /* Warna gelap untuk thumb scrollbar */
+}
+
+.container.darkMode::-webkit-scrollbar-track {
+  background-color: #333; /* Warna gelap untuk track scrollbar */
+}
+
+.ag-theme-alpine-dark {
+  --ag-background-color: #000000; /* Set background to black */
+  --ag-header-background-color: #000000; /* Darker header background */
+  --ag-odd-row-background-color: #000000; /* Slightly lighter than black for contrast */
+  --ag-foreground-color: #ffffff; /* White text color */
+  --ag-secondary-foreground-color: #bfbfbf; /* Secondary text color */
+  --ag-border-color: #333333; /* Dark border color */
+}
+
+/* Optional: Customize specific elements further */
+.ag-theme-alpine-dark .ag-header-cell {
+  background-color: #1a1a1a; /* Even darker header cells */
+  color: #ffffff; /* White text for headers */
+}
+
+.ag-theme-alpine-dark .ag-row {
+  background-color: #000000; /* Black background for rows */
+}
+
+.ag-theme-alpine-dark .ag-row-hover {
+  background-color: #333333; /* Darker hover effect */
+}
+
+.ag-theme-alpine-dark .ag-cell {
+  color: #ffffff; /* White text in cells */
+  border-color: #333333; /* Border color for cells */
+}
+
+.ag-theme-alpine-dark .ag-grid {
+  border-color: #000000; /* Black border for the grid */
+}

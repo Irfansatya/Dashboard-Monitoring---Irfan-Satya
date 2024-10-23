@@ -1,0 +1,52 @@
+.ag-theme-alpine {
+    box-sizing: border-box;
+    margin: 0 auto; /* Tengah-kan kontainer jika diperlukan */
+    padding: 20px; /* Padding di sekitar grid */
+    max-width: 1200px; /* Maksimal lebar grid */
+  }
+  
+  .edit-btn {
+    background-color: black !important; /* Tambahkan !important */
+    color: white !important; /* Tambahkan !important */
+    border: none;
+    padding-top: -20px;
+    margin-right: 5px;
+    cursor: pointer;
+    align-items: center;
+    height: 25px;
+    width: 60px;
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+
+  .edit-btn .edit-label {
+    margin-top: -9px;
+  }
+  
+  .edit-btn:hover {
+    background-color: white !important; /* Tambahkan !important */
+    color: black !important; /* Tambahkan !important */
+  }
+
+  .save-btn {
+    background-color: black !important; /* Tambahkan !important */
+    color: white !important; /* Tambahkan !important */
+    border: none;
+    padding-top: -20px;
+    margin-right: 5px;
+    cursor: pointer;
+    align-items: center;
+    height: 25px;
+    width: 60px;
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+
+  .save-btn .save-label {
+    margin-top: -8px;
+  }
+  
+  .save-btn:hover {
+    background-color: white !important; /* Tambahkan !important */
+    color: black !important; /* Tambahkan !important */
+  }

@@ -1,0 +1,118 @@
+.daftarkelas {
+    display: flex;
+    background-color: white;
+    margin-top: -60px;
+    margin-left: -25px;
+}
+
+.konten {
+    margin-left: 260px;
+    margin-top: -110px;
+    padding: 10px;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.cardd {
+    border: 1px solid #7F9BE1;
+    border-radius: 8px;
+    padding: 20px 14px 14px 20px;
+    width: 296px;
+    box-shadow: 0 2px 8px rgba(252, 49, 49, 0.1);
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardd h2 {
+    margin: 0;
+    font-size: 20px;
+    margin-top: -20px;
+    margin-bottom: 10px;
+}
+
+.card-info {
+    font-size: 14px;
+    color: #666;
+    margin: 4px 0;
+}
+
+.text-content {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.icon-number {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: -38px;
+    margin-left: 205px;
+}
+
+.icon {
+    width: 24px;
+    /* Ukuran ikon */
+    height: 24px;
+    /* Ukuran ikon */
+}
+
+.number {
+    font-size: 16px;
+    /* Ukuran teks untuk angka */
+    font-weight: bold;
+    /* Menebalkan angka */
+}
+
+.cardButton {
+    width: 255px;
+    margin-top: 40px;
+    padding: 8px 12px;
+    background-color: transparent;
+    border: 1px solid #007bff;
+    color: #007bff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cardButton:hover {
+    background-color: #cfe6ff;
+}
+
+.header {
+    display: flex;
+    /* Mengubah menjadi flex container */
+    justify-content: space-between;
+    /* Menyusun judul dan dropdown di kedua sisi */
+    align-items: center;
+    /* Vertikal center */
+}
+
+.judulDataSiswa {
+    font-size: 24px;
+    font-weight: 650;
+    color: #050505;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+.kelasDataSiswa {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #DFE1EE;
+    border-radius: 4px;
+    background-color: white;
+    margin-right: 30px;
+}
+
+.kelas-select:focus {
+    outline: none;
+    border-color: #0056b3;
+}

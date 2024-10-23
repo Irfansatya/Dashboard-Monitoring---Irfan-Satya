@@ -1,0 +1,122 @@
+/* Layout Utama */
+.list-siswa {
+    display: flex;
+    height: 100vh;
+    font-family: 'Inter', sans-serif;
+}
+
+.list-konten {
+    margin-left: 238px;
+    margin-top: -7px;
+    padding: 20px;
+    width: 1015px;
+}
+
+/* Kontainer Utama */
+.list-wrapper {
+    padding: 1rem;
+    font-family: Arial, sans-serif;
+}
+
+.list-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.list-section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    margin-top: 10px;
+}
+
+.list-controls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.4rem;
+}
+
+.search-containerr {
+    position: relative;
+}
+
+.search-containerr i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.search-inputt {
+    width: 250px;
+    padding: 10px 10px 10px 35px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-inputt:focus {
+    outline: none;
+    border-color: #888;
+    /* Ubah warna border saat fokus */
+}
+
+
+/* ag-Grid */
+.ag-theme-alpine {
+    --ag-header-height: 40px;
+    --ag-header-foreground-color: #333;
+    --ag-header-background-color: #ffffff;
+    --ag-odd-row-background-color: #f9f9f9;
+    font-family: 'Inter', sans-serif;
+}
+
+.ag-header-cell-text {
+    font-weight: bold;
+}
+
+.ag-checkbox-input-wrapper {
+    justify-content: center;
+}
+
+.ag-cell-value {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.list-wrapper {
+    padding: 4px 24px;
+    margin-bottom: 20px;
+    background-color: #FFFFFF;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.canceldataButton {
+    font-family: 'Inter' sans-serif;
+    padding: 4px 40px;
+    /* Ukuran padding yang lebih besar */
+    border-radius: 6px;
+    /* Bulatkan sudut lebih besar */
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    height: 45px;
+    border: none;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-left: 835px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.list-cancel-button:hover {
+    transform: translateY(-2px);
+    /* Efek mengangkat */
+}

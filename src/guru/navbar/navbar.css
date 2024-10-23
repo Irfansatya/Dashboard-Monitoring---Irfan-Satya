@@ -1,0 +1,445 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: white;
+}
+
+.sidebar {
+    width: 227px;
+    height: 100%;
+    background-color: white;
+    padding: 20px;
+    position: fixed;
+    border: 1px solid #E6E6E6;
+}
+
+.title {
+    display: flex;
+    margin-left: 7px;
+}
+
+.webIcon {
+    height: 31px;
+    width: auto;
+    margin-top: -3px;
+}
+
+.webName {
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 9px;
+    margin-top: 2px;
+}
+
+.searchBar {
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
+    width: 175px;
+    height: 37px;
+    border: 1px solid #E6E6E6;
+    background-color: #F4F4FB;
+    border-radius: 9px;
+    margin-top: 27px;
+    margin-left: 5px;
+}
+
+.searchIcon {
+    width: 16px;
+    height: auto;
+    margin-left: 9px;
+}
+
+.searchText {
+    background-color: #F4F4FB;
+    width: 140px;
+    outline: none;
+    font-size: 14px;
+    font-weight: 350;
+    margin-left: 7px;
+    color: #050505;
+}
+
+.menu {
+    margin-left: 5px;
+    margin-top: 26px;
+}
+
+.pembelajaran {
+    height: 104px;
+}
+
+.menuPembelajaran {
+    display: flex;
+    width: 201px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.penandaAktif {
+    width: 4px;
+    height: 25px;
+    z-index: 100;
+    position: absolute;
+    left: 222px;
+    margin-top: -3px;
+    background-color: #050505;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.menuSidebar {
+    display: flex;
+    margin-top: 20px;
+    cursor: pointer;
+    width: 201px;
+}
+
+.menuIcon {
+    width: 20px;
+    height: auto;
+}
+
+.menuText {
+    font-size: 14.5px;
+    color: #646464;
+    font-weight: 450;
+    margin-left: 9px;
+    width: 200px;
+}
+
+.menuTextHover {
+    font-size: 14.5px;
+    color: #050505;
+    font-weight: 530;
+    margin-left: 9px;
+}
+
+.menuTextKeluar {
+    font-size: 14.5px;
+    color: #FF3535;
+    font-weight: 500;
+    margin-left: 9px;
+}
+
+.submenuPembelajaran {
+    margin-left: 7px;
+    margin-top: 14px;
+}
+
+.submenuHover {
+    color: #0048FF;
+    font-size: 14.5px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.submenuHoverTugas {
+    color: #0048FF;
+    font-size: 14.5px;
+    font-weight: 500;
+    margin-top: 16px;
+    cursor: pointer;
+}
+
+.submenu {
+    color: #646464;
+    font-size: 14.5px;
+    font-weight: 450;
+    cursor: pointer;
+}
+
+.submenuTugas {
+    color: #646464;
+    font-size: 14.5px;
+    font-weight: 450;
+    margin-top: 16px;
+    cursor: pointer;
+}
+
+.lainnya {
+    margin-top: 26px;
+    font-size: 12.5px;
+    font-weight: 450;
+    color: #A1A1A1;
+    margin-bottom: -3px;
+}
+
+.detailPembelajaran {
+    display: flex;
+}
+
+.garisPembelajaran {
+    display: flex;
+}
+
+.garisVertikal {
+    height: 56px;
+    width: 1px;
+    background-color: #d9d9d9;
+    margin-left: 10px;
+    margin-top: 7px;
+}
+
+.garisHorizontal1 {
+    width: 12px;
+    height: 1px;
+    background-color: #d9d9d9;
+    margin-top: 24px;
+}
+
+.garisHorizontal2 {
+    width: 12px;
+    height: 1px;
+    background-color: #d9d9d9;
+    margin-top: 62px;
+    margin-left: -12px;
+}
+
+.topbar {
+    width: 1060px;
+    height: 80px;
+    background-color: white;
+    display: flex;
+    padding: 20px;
+    margin-left: 227px;
+}
+
+.tahunajar {
+    display: flex;
+    width: 170px;
+    height: 37px;
+    background-color: #050505;
+    border-radius: 9px;
+    margin-left: 6px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.tahunajarIcon {
+    width: 21px;
+    height: auto;
+    margin-left: 11px;
+}
+
+.tahunajarOpsi {
+    background-color: #050505;
+    color: white;
+    outline: none;
+    font-size: 13.5px;
+    font-weight: 500;
+    margin-left: 5px;
+    width: 125px;
+    cursor: pointer;
+}
+
+.kalender {
+    display: flex;
+    margin-left: 14px;
+    align-items: center;
+    width: 115px;
+    height: 37px;
+    background-color: white;
+    border-radius: 9px;
+    border: 1px solid #D9D9D9;
+    cursor: pointer;
+}
+
+.kalenderIcon {
+    width: 21px;
+    margin-left: 11px;
+}
+
+.kalenderText {
+    color: #050505;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+.buttonTopbar {
+    display: flex;
+    align-items: center;
+    width: 37px;
+    height: 37px;
+    background-color: white;
+    border: 1px solid #D9D9D9;
+    border-radius: 9px;
+    margin-left: 14px;
+    cursor: pointer;
+}
+
+.notifikasiTopbar {
+    margin-left: 9px;
+    width: 18px;
+    height: auto;
+}
+
+.searchTopbar {
+    margin-left: 9.5px;
+    width: 16px;
+    height: auto;
+}
+
+.avatarUser {
+    margin-left: 375px;
+    width: 40px;
+    height: 40px;
+    background-color: #5400E5;
+    text-align: center;
+    border-radius: 50%;
+    margin-top: -3px;
+}
+
+.inisial {
+    color: white;
+    font-size: 22px;
+    font-weight: 400;
+    margin-top: 3.5px;
+}
+
+.detailUser {
+    margin-left: 10px;
+}
+
+.namaDanMapel {
+    display: flex;
+}
+
+.namaUser {
+    font-size: 14.5px;
+    font-weight: 550;
+    margin-top: -3px;
+}
+
+.mapelUser {
+    font-size: 11px;
+    font-weight: 600;
+    width: 35px;
+    height: 18px;
+    padding-top: 1px;
+    border-radius: 4px;
+    background-color: #E6F8F5;
+    color: #00B69B;
+    text-align: center;
+    margin-left: 8px;
+    margin-top: -1px;
+}
+
+.emailUser {
+    font-size: 12px;
+    font-weight: 400;
+    color: #8B8B8B;
+    margin-top: 1px;
+}
+
+.arrowUser {
+    width: 13px;
+    height: auto;
+}
+
+.arrowContainer {
+    margin-left: 12px;
+    margin-top: 7px;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .rotated {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+  }
+
+.detailPopup {
+    position: relative;
+    top: -460px; /* Adjust based on your needs */
+    background-color: #F4F4FB;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #E3E3E9;
+    border-radius: 7px;
+    padding: 10px;
+    z-index: 1000;
+    margin-left: 1025px;
+    width: 220px;
+    height: 180px;
+    overflow: hidden;
+  }
+  
+  .posisiItem {
+    margin-top: -10px;
+  }
+  
+  .popupItem {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14.5px;
+    font-weight: 400;
+    border-bottom: 1px solid #E3E3E9;
+    width: 220px;
+    height: 45px;
+    margin-left: -10px;
+    color: #050505;
+  }
+  
+  .popupItem:hover {
+    background-color: #F1F1F8;
+    width: 220px;
+    height: 45px;
+  }
+  
+  .popupIcon {
+    margin-left: 15px;
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+  }
+  
+  .toggleswitch {
+    position: relative;
+    display: inline-block;
+    width: 46px; /* Ukuran lebih kecil untuk toggle */
+    height: 23px; /* Sesuaikan dengan desain yang diinginkan */
+    cursor: pointer;
+    margin-left: 24px;
+  }
+  
+  .toggleswitch input[type="checkbox"] {
+    display: none; /* Sembunyikan checkbox default */
+  }
+  
+  .toggleswitchbackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+    border-radius: 15px; /* Setengah dari height untuk border-radius yang melingkar */
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .toggleswitchhandle {
+    position: absolute;
+    top: 3.6px; /* Beri jarak dari tepi atas */
+    left: 4px; /* Beri jarak dari tepi kiri */
+    width: 16px; /* Sedikit lebih kecil untuk muat dalam background */
+    height: 16px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .toggleswitch input[type="checkbox"]:checked + .toggleswitchbackground {
+    background-color: #05c46b; /* Warna hijau saat diaktifkan */
+  }
+  
+  .toggleswitch input[type="checkbox"]:checked + .toggleswitchbackground .toggleswitchhandle {
+    transform: translateX(22px); /* Pindahkan handle ke kanan */
+  }
+  
