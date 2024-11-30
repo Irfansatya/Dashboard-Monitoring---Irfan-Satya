@@ -1,5 +1,9 @@
 {
-    "installCommand": "pnpm install --no-frozen-lockfile",
-    "buildCommand": "pnpm build",
-    "outputDirectory": "dist"
+    "build": {
+      "env": {
+        "PNPM_HOME": ".pnpm"
+      },
+      "installCommand": "npm install",
+      "buildCommand": "npm run build"
+    }
   }
