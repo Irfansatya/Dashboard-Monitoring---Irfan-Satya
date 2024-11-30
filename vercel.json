@@ -1,9 +1,0 @@
-{
-    "build": {
-      "env": {
-        "PNPM_HOME": ".pnpm"
-      },
-      "installCommand": "npm install",
-      "buildCommand": "npm run build"
-    }
-  }
