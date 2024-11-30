@@ -38,11 +38,6 @@ export const routes: RouteDefinition[] = [
   },
 
   {
-    path: '/menuGuru', // Ensure this path is all lowercase
-    component: lazy(() => import('./guru/navbar/navbar')), // Ensure the path matches the file name
-  },
-
-  {
     path: '**',
     component: lazy(() => import('./errors/404')),
   },

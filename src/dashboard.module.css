@@ -35,6 +35,24 @@ body {
     position: fixed;
     border-right: 1px solid #ECECEC;
   }
+
+  .progressBarContainer {
+    width: 100%;
+    height: 4px;
+    background-color: #CFD4FF;
+    position: absolute;
+    border-radius: 13px;
+    margin-top: -20px;
+    margin-left: -19px;
+}
+
+.progressBar {
+    height: 100%;
+    background-color: #3F53FF;
+    width: 0; /* default width */
+    transition: width 0.3s;
+    border-radius: 13px;
+}
   
   .logo {
     display: flex;
@@ -498,6 +516,7 @@ body {
   padding: 20px;
   position: relative;
   box-shadow: 0 7px 7px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
 
 .popupHeader {
@@ -506,7 +525,6 @@ body {
   justify-content: space-between;
   border-bottom: 1px solid #DEDEDE;
   padding-bottom: 10px;
-  margin-bottom: 20px;
   margin-top: -7px;
   margin-left: 2px;
   width: 445px;
@@ -532,10 +550,29 @@ body {
   height: 20px;
 }
 
+.contentContainer {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
 .popupContent {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.popupContent1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
+  min-width: 100%;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.popupContent2 {
+  min-width: 100%;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .inputGroup {
@@ -566,6 +603,27 @@ body {
   font-weight: 350;
   color: #000000;
   width: 209px;
+}
+
+.textInputProvinsi {
+  font-size: 13.5px;
+  font-weight: 350;
+  color: #000000;
+  width: 300px;
+}
+
+.textInputKabupaten {
+  font-size: 13.5px;
+  font-weight: 350;
+  color: #000000;
+  width: 300px;
+}
+
+.textInputKecamatan {
+  font-size: 13.5px;
+  font-weight: 350;
+  color: #000000;
+  width: 300px;
 }
 
 .textAlamat {
@@ -982,8 +1040,8 @@ body {
 
 .petaLokasi {
     width: 940px;
-    height: 470px;
-    background-color: white;
+    height: 530px;
+    background-color: none;
     border: 1px solid #D5E1FF;
     border-radius: 10px;
     margin-bottom: 13px;
@@ -997,6 +1055,14 @@ body {
   margin-top: 15px;
   margin-left: 20px;
   color: #252525;
+}
+
+.letakPeta {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 15px;
+  background-color: none;
 }
 
 
@@ -1285,7 +1351,6 @@ body {
   justify-content: space-between;
   border-bottom: 1px solid #3E3E3E;
   padding-bottom: 10px;
-  margin-bottom: 20px;
   margin-top: -7px;
   margin-left: 2px;
   width: 445px;
@@ -1442,6 +1507,33 @@ body {
   background-color: #171B24;
   width: 220px;
   height: 45px;
+}
+
+.darkMode .letakPeta {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 15px;
+  background-color: none;
+}
+
+.darkMode .petaLokasi {
+  width: 940px;
+  height: 530px;
+  background-color: none;
+  border: 1px solid #1b1b1b;
+  border-radius: 10px;
+  margin-bottom: 13px;
+  position: relative; /* Ensure position context for absolute positioning */
+  overflow: hidden; /* Prevent content from overflowing */
+}
+
+.darkMode .textPeta {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 15px;
+  margin-left: 20px;
+  color: white;
 }
 
 /* Scrollbar untuk mode gelap */

@@ -35,6 +35,7 @@ import editProfil from './asset2/editProfil.svg';
 import temaGelap from './asset2/temaGelap.svg';
 import pengaturan from './asset2/pengaturan.svg';
 import keluar from './asset2/keluar.svg';
+import Petalokasi from './petaLokasi'
 
 const Dashboard: Component = () => {
   let gridApi;
@@ -51,6 +52,58 @@ const Dashboard: Component = () => {
   const [showAddUserPopup, setShowAddUserPopup] = createSignal(false);
   const [isPopupVisible, setIsPopupVisible] = createSignal(false);
   const [isDarkMode, setIsDarkMode] = createSignal(false);
+  const [currentPopupContent, setCurrentPopupContent] = createSignal(1);
+  const [progressWidth, setProgressWidth] = createSignal('0%');
+
+  const data = {
+    "DKI Jakarta": {
+        "Jakarta Pusat": ["Menteng", "Gambir", "Tanah Abang", "Senen", "Cempaka Putih"],
+        "Jakarta Utara": ["Kelapa Gading", "Tanjung Priok", "Cilincing", "Koja", "Penjaringan"],
+        "Jakarta Barat": ["Grogol Petamburan", "Taman Sari", "Palmerah", "Kebon Jeruk", "Cengkareng"],
+        "Jakarta Selatan": ["Kebayoran Baru", "Pasar Minggu", "Tebet", "Setiabudi", "Mampang Prapatan"],
+        "Jakarta Timur": ["Matraman", "Pulo Gadung", "Cakung", "Duren Sawit", "Jatinegara"]
+    },
+    "Jawa Barat": {
+        "Bandung": ["Bandung Wetan", "Bandung Kulon", "Bandung Kidul", "Bandung Barat", "Cibeunying"],
+        "Bogor": ["Bogor Tengah", "Bogor Selatan", "Bogor Utara", "Bogor Timur", "Bogor Barat"],
+        "Bekasi": ["Bekasi Timur", "Bekasi Barat", "Bekasi Selatan", "Bekasi Utara", "Medan Satria"],
+        "Depok": ["Depok I", "Depok II", "Depok III", "Depok IV", "Depok V"],
+        "Cirebon": ["Cirebon Barat", "Cirebon Timur", "Cirebon Selatan", "Cirebon Utara", "Pangeran"]
+    },
+    "Banten": {
+        "Serang": ["Serang Kota", "Kasemen", "Cipocok Jaya", "Taktakan", "Serang Barat"],
+        "Tangerang": ["Tangerang Kota", "Ciledug", "Ciputat", "Tangerang Selatan", "Batu Ceper"],
+        "Cilegon": ["Cilegon Timur", "Cilegon Barat", "Cilegon Selatan", "Cilegon Utara", "Krakatau"],
+        "Pandeglang": ["Pandeglang Kota", "Labuan", "Cadasari", "Panimbang", "Menes"],
+        "Lebak": ["Lebak Kota", "Rangkasbitung", "Cibadak", "Malingping", "Panggarangan"]
+    },
+    "Jawa Tengah": {
+        "Semarang": ["Semarang Selatan", "Semarang Utara", "Semarang Barat", "Semarang Timur", "Semarang Tengah"],
+        "Solo": ["Solo Kota", "Jebres", "Laweyan", "Banjarsari", "Pasar Kliwon"],
+        "Magelang": ["Magelang Selatan", "Magelang Utara", "Magelang Barat", "Magelang Timur", "Magelang Tengah"],
+        "Salatiga": ["Salatiga Kota", "Argomulyo", "Sidorejo", "Tingkir", "Kota Salatiga"],
+        "Banyumas": ["Purwokerto Barat", "Purwokerto Timur", "Purwokerto Selatan", "Purwokerto Utara", "Kebasen"]
+    },
+    "DI Yogyakarta": {
+        "Yogyakarta": ["Danurejan", "Gedongtengen", "Kraton", "Mergangsan", "Umbulharjo"],
+        "Bantul": ["Bantul Kota", "Kasihan", "Piyungan", "Sanden", "Sedayu"],
+        "Sleman": ["Sleman", "Ngemplak", "Mlati", "Gamping", "Caturtunggal"],
+        "Gunung Kidul": ["Wonosari", "Saptosari", "Paliyan", "Panggang", "Karangmojo"],
+        "Kulon Progo": ["Wates", "Kokap", "Pengasih", "Kalibawang", "Lendah"]
+    },
+    "Jawa Timur": {
+        "Surabaya": ["Pabean Cantikan", "Gubeng", "Tegalsari", "Wonokromo", "Rungkut"],
+        "Malang": ["Malang Kota", "Klojen", "Lowokwaru", "Sukun", "Blimbing"],
+        "Kediri": ["Kediri Kota", "Mojo", "Grogol", "Pagu", "Kandat"],
+        "Jember": ["Jember Kota", "Arjasa", "Jenggawah", "Ambulu", "Sukorambi"],
+        "Banyuwangi": ["Banyuwangi Kota", "Giri", "Glagah", "Sukamade", "Kalon"]
+    }
+  };
+
+  const [provinsi, setProvinsi] = createSignal(Object.keys(data)[0]);
+  const [kabupaten, setKabupaten] = createSignal(Object.keys(data[Object.keys(data)[0]])[0]);
+  const [kecamatan, setKecamatan] = createSignal(data[Object.keys(data)[0]][Object.keys(data[Object.keys(data)[0]])[0]][0]);
+
   const [newUser, setNewUser] = createSignal({
     firstName: '',
     lastName: '',
@@ -60,12 +113,84 @@ const Dashboard: Component = () => {
     age: 0,
     income: '< 1.000.000',
     status: 'Pelajar / mahasiswa',
-    provinsi: '',
-    kabupaten: '',
-    kecamatan: ''
+    provinsi: Object.keys(data)[0],
+    kabupaten: Object.keys(data[Object.keys(data)[0]])[0],
+    kecamatan: data[Object.keys(data)[0]][Object.keys(data[Object.keys(data)[0]])[0]][0]
   });
 
   const navigate = useNavigate();
+
+  const handleProvinsiChange = (e) => {
+    const selectedProvinsi = e.target.value;
+    setProvinsi(selectedProvinsi);
+    const firstKabupaten = Object.keys(data[selectedProvinsi])[0];
+    setKabupaten(firstKabupaten);
+    setKecamatan(data[selectedProvinsi][firstKabupaten][0]);
+  
+    // Pastikan newUser diupdate dengan selectedProvinsi
+    setNewUser(prev => ({
+      ...prev, 
+      provinsi: selectedProvinsi, // Ini kunci perbaikannya
+      kabupaten: firstKabupaten,
+      kecamatan: data[selectedProvinsi][firstKabupaten][0]
+    }));
+  };
+  
+  const handleKabupatenChange = (e) => {
+    const selectedKabupaten = e.target.value;
+    setKabupaten(selectedKabupaten);
+    setKecamatan(data[provinsi()][selectedKabupaten][0]);
+  
+    // Pastikan newUser diupdate dengan selectedKabupaten
+    setNewUser(prev => ({
+      ...prev, 
+      kabupaten: selectedKabupaten, // Ini kunci perbaikannya
+      kecamatan: data[provinsi()][selectedKabupaten][0]
+    }));
+  };
+  
+  const handleKecamatanChange = (e) => {
+    const selectedKecamatan = e.target.value;
+    setKecamatan(selectedKecamatan);
+  
+    // Pastikan newUser diupdate dengan selectedKecamatan
+    setNewUser(prev => ({
+      ...prev, 
+      kecamatan: selectedKecamatan // Ini kunci perbaikannya
+    }));
+  };
+
+  const resetPopup = () => {
+    setCurrentPopupContent(1);
+    setProgressWidth('0%');
+  };
+
+  const handleNext = () => {
+    if (currentPopupContent() === 1) {
+      setProgressWidth('100%');
+      setCurrentPopupContent(2);
+    }
+  };
+
+  const handleCancel = () => {
+    resetPopup();
+    setShowAddUserPopup(false); // Tutup popup
+  };
+
+  const handleCancelEdit = () => {
+    resetPopup();
+    setEditingUser(false); // Tutup popup
+  };
+
+  const handleClose = () => {
+    resetPopup(); // Reset state popup
+    setShowAddUserPopup(false); // Tutup popup
+  };
+
+  const handleCloseEdit = () => {
+    resetPopup();
+    setEditingUser(false); // Tutup popup
+  };
 
   const togglePopup = () => {
     setIsPopupVisible(!isPopupVisible());
@@ -544,6 +669,7 @@ const updateChartColors = (chart, series, xRenderer, yRenderer, cursor) => {
 
   const handleAddUser = async () => {
     const user = newUser();
+    console.log("User data being sent:", user);
     const fullname = `${user.firstName} ${user.lastName}`; // Gabungkan firstname dan lastname
   
     // Buat objek user yang akan dikirim ke backend
@@ -583,9 +709,9 @@ const updateChartColors = (chart, series, xRenderer, yRenderer, cursor) => {
           age: 0,
           income: '< 1.000.000',
           status: 'Pelajar / mahasiswa',
-          provinsi: '',
-          kabupaten: '',
-          kecamatan: ''
+          provinsi: Object.keys(data)[0],
+          kabupaten: Object.keys(data[Object.keys(data)[0]])[0],
+          kecamatan: data[Object.keys(data)[0]][Object.keys(data[Object.keys(data)[0]])[0]][0]
         });
         updateCounts(updatedUsers);
         createChart(updatedUsers);
@@ -638,9 +764,9 @@ const updateChartColors = (chart, series, xRenderer, yRenderer, cursor) => {
             localStorage.setItem('users', JSON.stringify(updatedUsers));
             setRowData(updatedUsers);
             gridApi.setRowData(updatedUsers);
-            setEditingUser(null);
             updateCounts(updatedUsers); // Update counts after save
             createChart(updatedUsers); // Update chart after save
+            setEditingUser(false);
         } else {
             console.error('Failed to update user on the server');
         }
@@ -661,14 +787,9 @@ const updateChartColors = (chart, series, xRenderer, yRenderer, cursor) => {
     setJumlahPekerja(pekerjaCount);
   };
 
-
   createEffect(() => {
     updateCounts(rowData());
   });
-
-  const closePopup = () => {
-    setEditingUser(null);
-  };
 
   onMount(async () => {
     fetchData();
@@ -900,7 +1021,7 @@ const updateChartColors = (chart, series, xRenderer, yRenderer, cursor) => {
     <div class={styles.content5}>
       <div class={styles.petaLokasi}>
         <h1 class={styles.textPeta}>Peta Lokasi</h1>
-        <div class={styles.letakPeta}></div>
+        <div class={styles.letakPeta}><Petalokasi/></div>
       </div>
     </div>
   </div>
@@ -908,177 +1029,186 @@ const updateChartColors = (chart, series, xRenderer, yRenderer, cursor) => {
       {editingUser() && (
   <div class={styles.popupOverlay}>
     <div class={styles.popup}>
+      <div class={styles.progressBarContainer}>
+        <div class={styles.progressBar} style={{ width: progressWidth() }}></div>
+      </div>
       <div class={styles.popupHeader}>
         <img src={edit} alt="Edit" class={styles.iconHeader}/>
         <h2 class={styles.titleHeader}>Edit Data</h2>
-        <img src={close} alt="Close" class={styles.iconClose} onClick={closePopup} />
+        <img src={close} alt="Close" class={styles.iconClose} onClick={handleCloseEdit} />
       </div>
-      <div class={styles.popupContent}>
-        <div class={styles.popupContent1}>
-          <div class={styles.inputGroup}>
-            <label>Nama depan</label>
-            <input
-              type="text"
-              placeholder="John"
-              value={editingUser().firstName}
-              class={styles.textInput}
-              onInput={(e) =>
-                setEditingUser({ ...editingUser(), firstName: e.target.value })
-              }
-            />
-          </div>
-          {/* Input untuk Nama Akhir */}
-          <div class={styles.inputGroup}>
-            <label>Nama akhir</label>
-            <input
-              type="text"
-              placeholder="Wilson"
-              value={editingUser().lastName}
-              class={styles.textInput}
-              onInput={(e) =>
-                setEditingUser({ ...editingUser(), lastName: e.target.value })
-              }
-            />
-          </div>
-          {/* Input untuk Email */}
-          <div class={styles.inputGroup}>
-            <label>Email</label>
-            <input
-              type="email"
-              placeholder="Masukkan email.."
-              value={editingUser().email}
-              class={styles.textInput}
-              onInput={(e) =>
-                setEditingUser({ ...editingUser(), email: e.target.value })
-              }
-            />
-          </div>
-          {/* Input untuk Gender */}
-          <div class={styles.inputGroup}>
-            <label>Gender</label>
-            <select
-              value={editingUser().gender}
-              class={styles.textInput}
-              onInput={(e) =>
-                setEditingUser({ ...editingUser(), gender: e.target.value })
-              }
-            >
-              <option value="Laki laki">Laki laki</option>
-              <option value="Perempuan">Perempuan</option>
-            </select>
-          </div>
-          {/* Input untuk Golongan Darah */}
-          <div class={styles.inputGroup}>
-            <label>Gol. darah</label>
-            <select
-              value={editingUser().bloodtype}
-              class={styles.textInput}
-              onInput={(e) =>
-                setEditingUser({ ...editingUser(), bloodtype: e.target.value })
-              }
-            >
-              <option value="A">A</option>
-              <option value="B">B</option>
-              <option value="AB">AB</option>
-              <option value="O">O</option>
-              <option value="Tidak ingin memberi tahu">Tidak ingin memberi tahu</option>
-            </select>
-          </div>
-          {/* Input untuk Usia */}
-          <div class={styles.inputGroup}>
-            <label>Usia</label>
-            <input
-              type="number"
-              placeholder="0"
-              value={editingUser().age}
-              class={styles.textInput}
-              onInput={(e) =>
-                setEditingUser({ ...editingUser(), age: parseInt(e.target.value, 10) })
-              }
-            />
-          </div>
-          {/* Input untuk Pendapatan */}
-          <div class={styles.inputGroup}>
-            <label>Pendapatan</label>
-            <select
-              value={editingUser().income}
-              class={styles.textInput}
-              onInput={(e) =>
-                setEditingUser({ ...editingUser(), income: e.target.value })
-              }
-            >
-              <option value="< 1.000.000">&lt; 1.000.000</option>
-              <option value="1.000.000">1.000.000</option>
-              <option value="2.000.000">2.000.000</option>
-              <option value="3.000.000">3.000.000</option>
-              <option value="4.000.000">4.000.000</option>
-              <option value="5.000.000">5.000.000</option>
-              <option value="> 5.000.000">&gt; 5.000.000</option>
-            </select>
-          </div>
-          {/* Input untuk Status */}
-          <div class={styles.inputGroup}>
-            <label>Status</label>
-            <select
-              value={editingUser().status}
-              class={styles.textInput}
-              onInput={(e) =>
-                setEditingUser({ ...editingUser(), status: e.target.value })
-              }
-            >
-              <option value="Pelajar / mahasiswa">Pelajar / mahasiswa</option>
-              <option value="Pekerja / wirausaha">Pekerja / wirausaha</option>
-            </select>
-          </div>
-        </div>
-        <div class={styles.popupContent2}>
-          <div class={styles.inputGroup}>
-            <label>Provinsi</label>
-            <input
-              type="text"
-              placeholder="Masukkan provinsi.."
-              value={editingUser().provinsi}
-              class={styles.textAlamat}
-              onInput={(e) =>
-                setEditingUser({ ...editingUser(), provinsi: e.target.value })
-              }
-            />
-          </div>
-          {/* Input untuk Nama Akhir */}
-          <div class={styles.inputGroup}>
-            <label>Kabupaten</label>
-            <input
-              type="text"
-              placeholder="Masukkan kabupaten.."
-              value={editingUser().kabupaten}
-              class={styles.textAlamat}
-              onInput={(e) =>
-                setEditingUser({ ...editingUser(), kabupaten: e.target.value })
-              }
-            />
-          </div>
-          {/* Input untuk Email */}
-          <div class={styles.inputGroup}>
-            <label>Kecamatan</label>
-            <input
-              type="text"
-              placeholder="Masukkan kecamatan.."
-              value={editingUser().kecamatan}
-              class={styles.textAlamat}
-              onInput={(e) =>
-                setEditingUser({ ...editingUser(), kecamatan: e.target.value })
-              }
-            />
-          </div>
+      <div class={styles.contentContainer}>
+        <div class={styles.popupContent} style={{ transform: `translateX(-${(currentPopupContent() - 1) * 100}%)` }}>
+          <form class={styles.popupContent1}>
+            <div class={styles.inputGroup}>
+              <label>Nama depan</label>
+              <input
+                type="text"
+                placeholder="John"
+                value={editingUser().firstName}
+                class={styles.textInput}
+                onInput={(e) =>
+                  setEditingUser({ ...editingUser(), firstName: e.target.value })
+                }
+              />
+            </div>
+            {/* Input untuk Nama Akhir */}
+            <div class={styles.inputGroup}>
+              <label>Nama akhir</label>
+              <input
+                type="text"
+                placeholder="Wilson"
+                value={editingUser().lastName}
+                class={styles.textInput}
+                onInput={(e) =>
+                  setEditingUser({ ...editingUser(), lastName: e.target.value })
+                }
+              />
+            </div>
+            {/* Input untuk Email */}
+            <div class={styles.inputGroup}>
+              <label>Email</label>
+              <input
+                type="email"
+                placeholder="Masukkan email.."
+                value={editingUser().email}
+                class={styles.textInput}
+                onInput={(e) =>
+                  setEditingUser({ ...editingUser(), email: e.target.value })
+                }
+              />
+            </div>
+            {/* Input untuk Gender */}
+            <div class={styles.inputGroup}>
+              <label>Gender</label>
+              <select
+                value={editingUser().gender}
+                class={styles.textInput}
+                onInput={(e) =>
+                  setEditingUser({ ...editingUser(), gender: e.target.value })
+                }
+              >
+                <option value="Laki laki">Laki laki</option>
+                <option value="Perempuan">Perempuan</option>
+              </select>
+            </div>
+            {/* Input untuk Golongan Darah */}
+            <div class={styles.inputGroup}>
+              <label>Gol. darah</label>
+              <select
+                value={editingUser().bloodtype}
+                class={styles.textInput}
+                onInput={(e) =>
+                  setEditingUser({ ...editingUser(), bloodtype: e.target.value })
+                }
+              >
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="AB">AB</option>
+                <option value="O">O</option>
+                <option value="Tidak ingin memberi tahu">Tidak ingin memberi tahu</option>
+              </select>
+            </div>
+            {/* Input untuk Usia */}
+            <div class={styles.inputGroup}>
+              <label>Usia</label>
+              <input
+                type="number"
+                placeholder="0"
+                value={editingUser().age}
+                class={styles.textInput}
+                onInput={(e) =>
+                  setEditingUser({ ...editingUser(), age: parseInt(e.target.value, 10) })
+                }
+              />
+            </div>
+            {/* Input untuk Pendapatan */}
+            <div class={styles.inputGroup}>
+              <label>Pendapatan</label>
+              <select
+                value={editingUser().income}
+                class={styles.textInput}
+                onInput={(e) =>
+                  setEditingUser({ ...editingUser(), income: e.target.value })
+                }
+              >
+                <option value="< 1.000.000">&lt; 1.000.000</option>
+                <option value="1.000.000">1.000.000</option>
+                <option value="2.000.000">2.000.000</option>
+                <option value="3.000.000">3.000.000</option>
+                <option value="4.000.000">4.000.000</option>
+                <option value="5.000.000">5.000.000</option>
+                <option value="> 5.000.000">&gt; 5.000.000</option>
+              </select>
+            </div>
+            {/* Input untuk Status */}
+            <div class={styles.inputGroup}>
+              <label>Status</label>
+              <select
+                value={editingUser().status}
+                class={styles.textInput}
+                onInput={(e) =>
+                  setEditingUser({ ...editingUser(), status: e.target.value })
+                }
+              >
+                <option value="Pelajar / mahasiswa">Pelajar / mahasiswa</option>
+                <option value="Pekerja / wirausaha">Pekerja / wirausaha</option>
+              </select>
+            </div>
+          </form>
+          <form class={styles.popupContent2}>
+            <div class={styles.inputGroup}>
+                <label>Provinsi</label>
+                <select
+                  class={styles.textInputProvinsi}
+                  value={editingUser().provinsi}
+                  onInput={(e) => setEditingUser({ ...editingUser(), provinsi: e.target.value })}
+                >
+                  {Object.keys(data).map((prov) => (
+                    <option value={prov}>{prov}</option>
+                  ))}
+                </select>
+              </div>
+              <div class={styles.inputGroup}>
+                <label>Kabupaten/Kota</label>
+                <select
+                  class={styles.textInputKabupaten}
+                  value={editingUser().kabupaten}
+                  onInput={(e) => setEditingUser({ ...editingUser(), kabupaten: e.target.value })}
+                >
+                  {Object.keys(data[editingUser().provinsi]).map((kab) => (
+                    <option value={kab}>{kab}</option>
+                  ))}
+                </select>
+              </div>
+              <div class={styles.inputGroup}>
+                <label>Kecamatan</label>
+                <select
+                  class={styles.textInputKecamatan}
+                  value={editingUser().kecamatan}
+                  onInput={(e) => setEditingUser({ ...editingUser(), kecamatan: e.target.value })}
+                >
+                  {data[editingUser().provinsi][editingUser().kabupaten].map((kec) => (
+                    <option value={kec}>{kec}</option>
+                  ))}
+                </select>
+              </div>
+          </form>
         </div>
       </div>
       <div class={styles.popupActions}>
-        <button class={styles.cancelButton} onClick={closePopup}>
+        <button class={styles.cancelButton} onClick={handleCancelEdit}>
           Batalkan
         </button>
-        <button class={styles.saveButton} onClick={handleSave}>
-          Simpan
-        </button>
+        {currentPopupContent() === 1 ? (
+                <button onClick={handleNext} class={styles.saveButton}>
+                  Berikutnya
+                </button>
+              ) : (
+                <button onClick={handleSave} class={styles.saveButton}>
+                  Simpan
+                </button>
+              )}
       </div>
     </div>
   </div>
@@ -1106,146 +1236,151 @@ const updateChartColors = (chart, series, xRenderer, yRenderer, cursor) => {
       {showAddUserPopup() && (
   <div class={styles.popupOverlay}>
     <div class={styles.popup}>
+      <div class={styles.progressBarContainer}>
+        <div class={styles.progressBar} style={{ width: progressWidth() }}></div>
+      </div>
       <div class={styles.popupHeader}>
         <img src={tambah} alt="Tambah" class={styles.iconHeader}/>
         <h2 class={styles.titleHeader}>Tambah Data</h2>
-        <img src={close} alt="Close" class={styles.iconClose} onClick={() => setShowAddUserPopup(false)} />
+        <img src={close} alt="Close" class={styles.iconClose} onClick={handleClose} />
       </div>
-      <div class={styles.popupContent}>
-        <div class={styles.popupContent1}>
-          <div class={styles.inputGroup}>
-            <label>Nama depan</label>
-            <input
-              type="text"
-              placeholder="John"
-              value={newUser().firstName}
-              class={styles.textInput}
-              onInput={(e) => setNewUser({ ...newUser(), firstName: e.target.value })}
-            />
-          </div>
-          <div class={styles.inputGroup}>
-            <label>Nama akhir</label>
-            <input
-              type="text"
-              placeholder="Wilson"
-              value={newUser().lastName}
-              class={styles.textInput}
-              onInput={(e) => setNewUser({ ...newUser(), lastName: e.target.value })}
-            />
-          </div>
-          <div class={styles.inputGroup}>
-            <label>Email</label>
-            <input
-              type="email"
-              placeholder="Masukkan email.."
-              value={newUser().email}
-              class={styles.textInput}
-              onInput={(e) => setNewUser({ ...newUser(), email: e.target.value })}
-            />
-          </div>
-          <div class={styles.inputGroup}>
-            <label>Gender</label>
-            <select
-              value={newUser().gender}
-              class={styles.textInput}
-              onInput={(e) => setNewUser({ ...newUser(), gender: e.target.value })}
-            >
-              <option value="Laki laki">Laki laki</option>
-              <option value="Perempuan">Perempuan</option>
-            </select>
-          </div>
-          <div class={styles.inputGroup}>
-            <label>Gol. darah</label>
-            <select
-              value={newUser().bloodType}
-              class={styles.textInput}
-              onInput={(e) => setNewUser({ ...newUser(), bloodType: e.target.value })}
-            >
-              <option value="A">A</option>
-              <option value="B">B</option>
-              <option value="AB">AB</option>
-              <option value="O">O</option>
-              <option value="Tidak ingin memberi tahu">Tidak ingin memberi tahu</option>
-            </select>
-          </div>
-          <div class={styles.inputGroup}>
-            <label>Usia</label>
-            <input
-              type="number"
-              placeholder="0"
-              value={newUser().age}
-              class={styles.textInput}
-              onInput={(e) => setNewUser({ ...newUser(), age: parseInt(e.target.value, 10) })}
-            />
-          </div>
-          <div class={styles.inputGroup}>
-            <label>Pendapatan</label>
-            <select
-              value={newUser().income}
-              class={styles.textInput}
-              onInput={(e) => setNewUser({ ...newUser(), income: e.target.value })}
-            >
-              <option value="< 1.000.000">&lt; 1.000.000</option>
-              <option value="1.000.000">1.000.000</option>
-              <option value="2.000.000">2.000.000</option>
-              <option value="3.000.000">3.000.000</option>
-              <option value="4.000.000">4.000.000</option>
-              <option value="5.000.000">5.000.000</option>
-              <option value="> 5.000.000">&gt; 5.000.000</option>
-            </select>
-          </div>
-          <div class={styles.inputGroup}>
-            <label>Status</label>
-            <select
-              value={newUser().status}
-              class={styles.textInput}
-              onInput={(e) => setNewUser({ ...newUser(), status: e.target.value })}
-            >
-              <option value="Pelajar / mahasiswa">Pelajar / mahasiswa</option>
-              <option value="Pekerja / wirausaha">Pekerja / wirausaha</option>
-            </select>
-          </div>
-        </div>
-        <div class={styles.popupContent2}>
-          <div class={styles.inputGroup}>
-              <label>Provinsi</label>
+      <div class={styles.contentContainer}>
+        <div class={styles.popupContent} style={{ transform: `translateX(-${(currentPopupContent() - 1) * 100}%)` }}>
+          <form class={styles.popupContent1}>
+            <div class={styles.inputGroup}>
+              <label>Nama depan</label>
               <input
                 type="text"
-                placeholder="Masukkan provinsi.."
-                value={newUser().provinsi}
-                class={styles.textAlamat}
-                onInput={(e) => setNewUser({ ...newUser(), provinsi: e.target.value })}
+                placeholder="John"
+                value={newUser().firstName}
+                class={styles.textInput}
+                onInput={(e) => setNewUser({ ...newUser(), firstName: e.target.value })}
               />
             </div>
             <div class={styles.inputGroup}>
-              <label>Kabupaten</label>
+              <label>Nama akhir</label>
               <input
                 type="text"
-                placeholder="Masukkan kabupaten.."
-                value={newUser().kabupaten}
-                class={styles.textAlamat}
-                onInput={(e) => setNewUser({ ...newUser(), kabupaten: e.target.value })}
+                placeholder="Wilson"
+                value={newUser().lastName}
+                class={styles.textInput}
+                onInput={(e) => setNewUser({ ...newUser(), lastName: e.target.value })}
               />
             </div>
             <div class={styles.inputGroup}>
-              <label>Kecamatan</label>
+              <label>Email</label>
               <input
-                type="text"
-                placeholder="Masukkan kecamatan.."
-                value={newUser().kecamatan}
-                class={styles.textAlamat}
-                onInput={(e) => setNewUser({ ...newUser(), kecamatan: e.target.value })}
+                type="email"
+                placeholder="Masukkan email.."
+                value={newUser().email}
+                class={styles.textInput}
+                onInput={(e) => setNewUser({ ...newUser(), email: e.target.value })}
               />
             </div>
+            <div class={styles.inputGroup}>
+              <label>Gender</label>
+              <select
+                value={newUser().gender}
+                class={styles.textInput}
+                onInput={(e) => setNewUser({ ...newUser(), gender: e.target.value })}
+              >
+                <option value="Laki laki">Laki laki</option>
+                <option value="Perempuan">Perempuan</option>
+              </select>
+            </div>
+            <div class={styles.inputGroup}>
+              <label>Gol. darah</label>
+              <select
+                value={newUser().bloodType}
+                class={styles.textInput}
+                onInput={(e) => setNewUser({ ...newUser(), bloodType: e.target.value })}
+              >
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="AB">AB</option>
+                <option value="O">O</option>
+                <option value="Tidak ingin memberi tahu">Tidak ingin memberi tahu</option>
+              </select>
+            </div>
+            <div class={styles.inputGroup}>
+              <label>Usia</label>
+              <input
+                type="number"
+                placeholder="0"
+                value={newUser().age}
+                class={styles.textInput}
+                onInput={(e) => setNewUser({ ...newUser(), age: parseInt(e.target.value, 10) })}
+              />
+            </div>
+            <div class={styles.inputGroup}>
+              <label>Pendapatan</label>
+              <select
+                value={newUser().income}
+                class={styles.textInput}
+                onInput={(e) => setNewUser({ ...newUser(), income: e.target.value })}
+              >
+                <option value="< 1.000.000">&lt; 1.000.000</option>
+                <option value="1.000.000">1.000.000</option>
+                <option value="2.000.000">2.000.000</option>
+                <option value="3.000.000">3.000.000</option>
+                <option value="4.000.000">4.000.000</option>
+                <option value="5.000.000">5.000.000</option>
+                <option value="> 5.000.000">&gt; 5.000.000</option>
+              </select>
+            </div>
+            <div class={styles.inputGroup}>
+              <label>Status</label>
+              <select
+                value={newUser().status}
+                class={styles.textInput}
+                onInput={(e) => setNewUser({ ...newUser(), status: e.target.value })}
+              >
+                <option value="Pelajar / mahasiswa">Pelajar / mahasiswa</option>
+                <option value="Pekerja / wirausaha">Pekerja / wirausaha</option>
+              </select>
+            </div>
+          </form>
+          <form class={styles.popupContent2}>
+            <div class={styles.inputGroup}>
+                <label>Provinsi</label>
+                <select class={styles.textInputProvinsi} value={provinsi()} onInput={handleProvinsiChange}>
+                  {Object.keys(data).map((prov) => (
+                  <option value={prov}>{prov}</option>
+                  ))}
+                </select>
+              </div>
+              <div class={styles.inputGroup}>
+                <label>Kabupaten/Kota</label>
+                <select class={styles.textInputKabupaten} value={kabupaten()} onInput={handleKabupatenChange}>
+                  {Object.keys(data[provinsi()]).map((kab) => (
+                  <option value={kab}>{kab}</option>
+                  ))}
+                </select>
+              </div>
+              <div class={styles.inputGroup}>
+                <label>Kecamatan</label>
+                <select class={styles.textInputKecamatan} value={kecamatan()} onInput={(e) => { setKecamatan(e.target.value); handleKecamatanChange(e); }}>
+                  {data[provinsi()][kabupaten()].map((kec) => (
+                  <option value={kec}>{kec}</option>
+                  ))}
+                </select>
+              </div>
+          </form>
         </div>
       </div>
       <div class={styles.popupActions}>
-        <button class={styles.cancelButton} onClick={() => setShowAddUserPopup(false)}>
-          Batalkan
-        </button>
-        <button class={styles.saveButton} onClick={handleAddUser}>
-          Tambah
-        </button>
+      <button onClick={handleCancel} class={styles.cancelButton}>
+                Batalkan
+              </button>
+              {currentPopupContent() === 1 ? (
+                <button onClick={handleNext} class={styles.saveButton}>
+                  Berikutnya
+                </button>
+              ) : (
+                <button onClick={handleAddUser} class={styles.saveButton}>
+                  Tambah
+                </button>
+              )}
       </div>
     </div>
   </div>

@@ -357,7 +357,7 @@ const Register: Component<{ onClose: () => void; onSwitch: () => void; onRegiste
 
     return (
         <div class={styles.overlay}>
-            <div class={styles.popup}>
+            <div class={styles.popupRegister}>
                 <div class={styles.progressBarContainer}>
                     <div class={styles.progressBar} style={{ width: progressWidth() }}></div>
                 </div>
